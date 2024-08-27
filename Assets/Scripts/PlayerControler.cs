@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
@@ -12,7 +13,10 @@ public class PlayerControler : MonoBehaviour
     public float jumpCoolDown;
     public float airMultiplier;
     bool readyToJump;
+    [Space(5)]
 
+    [Header("Soaring Settings:")]
+    public float soaringFallMultiplier;
     [Space(5)]
 
     [Header("Keybinds:")]
@@ -69,13 +73,22 @@ public class PlayerControler : MonoBehaviour
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKey(jumpKey) && readyToJump && grounded)
+        if (Input.GetKeyDown(jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
             Debug.Log("Pulou");
             Jump();
 
             Invoke(nameof(ResetJump), jumpCoolDown);
+        }
+
+        if (Input.GetKey(jumpKey) && !grounded && readyToJump)
+        {
+            Soar();
+        }
+        else if (rb.useGravity == false)
+        {
+            rb.useGravity = true;
         }
     }
 
@@ -114,5 +127,15 @@ public class PlayerControler : MonoBehaviour
     private void ResetJump()
     {
         readyToJump = true;
+    }
+
+    private void Soar()
+    {
+        if (rb.useGravity)
+        {
+            rb.velocity = Vector3.zero;
+        }
+        rb.useGravity = false;
+        rb.AddForce(transform.up * soaringFallMultiplier, ForceMode.Force);
     }
 }
