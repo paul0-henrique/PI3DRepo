@@ -22,6 +22,8 @@ public class MenuController : MonoBehaviour
     {
         if (!player.isPlaying && Input.anyKeyDown)
         {
+            Debug.Log("funfo");
+
             player.Play();
             animator.SetTrigger("Fade");
             rawImage.SetActive(true);
