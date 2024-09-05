@@ -106,17 +106,17 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Distance: 0.5
-    - _Distortion: 0.05
-    - _DistortionFrequency: 28
-    - _DistortionSpeed: 0.3
+    - _Distance: 2
+    - _Distortion: 0.2
+    - _DistortionFrequency: 11.7
+    - _DistortionSpeed: 0.2
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _FoamAmount: 0.5
-    - _FoamCutoff: 0.8
-    - _FoamDistortionSpeed: 0.3
-    - _FoamScale: 16
+    - _FoamAmount: 1
+    - _FoamCutoff: 1.42
+    - _FoamDistortionSpeed: 0.2
+    - _FoamScale: 24
     - _Foam_Amount: 0.71
     - _Foam_Cutoff: 2.42
     - _GlossMapScale: 0
@@ -142,7 +142,7 @@ Material:
     - _DeepWater: {r: 0, g: 0.7380605, b: 0.745283, a: 0.2509804}
     - _Deep_Water: {r: 0, g: 0.12997717, b: 1, a: 0.29803923}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FoamColor: {r: 0.10743396, g: 0.312, b: 0.27325076, a: 0}
+    - _FoamColor: {r: 0.15289888, g: 0.504, b: 0.43604493, a: 0}
     - _ShallowWater: {r: 0, g: 0.2126374, b: 1, a: 0.101960786}
     - _Shallow_Water: {r: 0, g: 0.99999946, b: 1, a: 0.29803923}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
